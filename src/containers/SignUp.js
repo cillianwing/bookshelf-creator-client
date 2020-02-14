@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const SignUp = (props) => {
+const Signup = (props) => {
 
 }
 
-export default SignUp;
+export default Signup;
