@@ -1,17 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-function App() {
+import { getCurrentUser } from './actions/currentUser';
+import Main from './components/Main';
+import Home from './components/Home';
+import Login from './containers/Login';
+import SignUp from './containers/SignUp';
+
+function App(props) {
+  const { loggedIn } = props
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      props.getCurrentUser()
+    }
+  }, [])
+
   return (
     <Router>
       <div className="App">
-
+        { loggedIn ? <Main /> : <Home /> }
+        <Switch>
+          {/* all routes to be listed here <Route exact path='/'><Component /></Route> */}
+          <Route exact path='/signup'><SignUp /></Route>
+          <Route exact path='/login'><Login /></Route>
+        </Switch>
       </div>
     </Router>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App);
