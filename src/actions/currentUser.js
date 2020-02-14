@@ -54,6 +54,13 @@ export const signup = (credentials) => {
 	}
 }
 
+export const logout = (event) => {
+	return dispatch => {
+		localStorage.setItem("token", "")
+		dispatch(clearCurrentUser())
+	}
+}
+
 export const getCurrentUser = () => {
 	const token = localStorage.getItem("token")
 	return dispatch => {
