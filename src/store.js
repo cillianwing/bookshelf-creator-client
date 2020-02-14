@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import currentUser from './reducers/currentUser';
 import loginForm from './reducers/loginForm';
 import signUpForm from './reducers/signUpForm';
+import searchBooks from './reducers/searchBooks';
 
 const reducer = combineReducers({
 	currentUser,
 	loginForm,
-	signUpForm
+	signUpForm,
+	searchBooks
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

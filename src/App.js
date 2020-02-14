@@ -7,6 +7,7 @@ import Main from './components/Main';
 import Home from './components/Home';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
+import SearchBooksContainer from './containers/SearchBooksContainer';
 
 function App(props) {
   const { loggedIn } = props
