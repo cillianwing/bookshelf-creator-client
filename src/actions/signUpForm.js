@@ -1,11 +1,11 @@
-export const updateSignupForm = (formData) => {
+export const updateSignUpForm = (formData) => {
 	return {
 		type: "UPDATE_SIGNUP_FORM",
 		formData
 	}
 }
 
-export const resetSignupForm = () => {
+export const resetSignUpForm = () => {
 	return {
 		type: "RESET_SIGNUP_FORM"
 	}

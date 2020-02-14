@@ -1,5 +1,5 @@
 import { resetLoginForm } from './loginForm';
-import { resetSignupForm } from './signupForm';
+import { resetSignUpForm } from './signUpForm';
 
 export const setCurrentUser = user => {
 	return {
@@ -48,7 +48,7 @@ export const signup = (credentials) => {
 		.then(data => {
 			localStorage.setItem("token", data.jwt)
 			dispatch(setCurrentUser(data.user))
-			dispatch(resetSignupForm())
+			dispatch(resetSignUpForm())
 		})
 		.catch(console.log)
 	}

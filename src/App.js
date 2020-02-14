@@ -6,7 +6,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Main from './components/Main';
 import Home from './components/Home';
 import Login from './containers/Login';
-import Signup from './containers/Signup';
+import Signup from './containers/SignUp';
 
 function App(props) {
   const { loggedIn } = props
@@ -24,7 +24,7 @@ function App(props) {
         { loggedIn ? <Main /> : <Home /> }
         <Switch>
           {/* all routes to be listed here <Route exact path='/'><Component /></Route> */}
-          <Route exact path='/signup'><Signup /></Route>
+          <Route exact path='/signup'><SignUp /></Route>
           <Route exact path='/login'><Login /></Route>
         </Switch>
       </div>

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { updateSignupForm } from '../actions/signupForm';
+import { updateSignUpForm } from '../actions/signUpForm';
 import { signup } from '../actions/currentUser';
 
-const Signup = ({signupFormData, updateSignupForm, signup}) => {
+const SignUp = ({signUpFormData, updateSignUpForm, signup}) => {
 
 	const handleInputChange = (event) => {
 		const { name, value } = event.target
 		const updatedFormInfo = {
-			...signupFormData,
+			...signUpFormData,
 			[name]: value
 		}
 		updateSingupForm(updatedFormInfo)
@@ -16,17 +16,17 @@ const Signup = ({signupFormData, updateSignupForm, signup}) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		signup(signupFormData)
+		signup(signUpFormData)
 	}
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type="text" placeholder="Email" name="email" value={signupFormData.email} onChange={handleInputChange} />
-			<input type="password" placeholder="Password" name="password" value={signupFormData.password} onChange={handleInputChange} />
-			<input type="text" placeholder="Name" name="name" value={signupFormData.name} onChange={handleInputChange} />
-			<textarea placeholder="Biography" name="biography" value={signupFormData.biography} onChange={handleInputChange} />
-			<input type="number" placeholder="Books Goal" name="booksGoal" value={signupFormData.booksGoal} onChange={handleInputChange} />
-			<input type="number" placeholder="Pages Goal" name="pagesGoal" value={signupFormData.pagesGoal} onChange={handleInputChange} />
+			<input type="text" placeholder="Email" name="email" value={signUpFormData.email} onChange={handleInputChange} />
+			<input type="password" placeholder="Password" name="password" value={signUpFormData.password} onChange={handleInputChange} />
+			<input type="text" placeholder="Name" name="name" value={signUpFormData.name} onChange={handleInputChange} />
+			<textarea placeholder="Biography" name="biography" value={signUpFormData.biography} onChange={handleInputChange} />
+			<input type="number" placeholder="Books Goal" name="booksGoal" value={signUpFormData.booksGoal} onChange={handleInputChange} />
+			<input type="number" placeholder="Pages Goal" name="pagesGoal" value={signUpFormData.pagesGoal} onChange={handleInputChange} />
 			<input type="submit" value="Sign Up" />
 		</form>
 	)
@@ -34,7 +34,7 @@ const Signup = ({signupFormData, updateSignupForm, signup}) => {
 }
 
 const mapStateToProps = state => {
-	signupFormData: state.signupForm
+	signUpFormData: state.signUpForm
 }
 
-export default connect(mapStateToProps, {})(Signup);
+export default connect(mapStateToProps, {})(SignUp);
