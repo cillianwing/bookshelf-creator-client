@@ -1,10 +1,11 @@
 const initialState = {
 	email: "",
 	password: "",
+	password_confirmation: "",
 	name: "",
 	biography: "",
-	booksGoal: "",
-	pagesGoal: ""
+	books_goal: "",
+	pages_goal: ""
 }
 
 export default (state = initialState, action) => {

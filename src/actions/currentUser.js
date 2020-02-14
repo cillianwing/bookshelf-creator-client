@@ -16,7 +16,7 @@ export const clearCurrentUser = () => {
 
 export const login = (credentials) => {
 	return dispatch => {
-		return fetch(`http://localhost:3000/login`, {
+		return fetch(`http://localhost:3000/api/v1/login`, {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
@@ -36,13 +36,13 @@ export const login = (credentials) => {
 
 export const signup = (credentials) => {
 	return dispatch => {
-		return fetch(`http://localhost:3000/users`, {
+		return fetch(`http://localhost:3000/api/v1/users`, {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
 				"Accept": "application/json"
 			},
-			body: JSON.stringify(credentials)			
+			body: JSON.stringify({user: credentials})			
 		})
 		.then(res => res.json())
 		.then(data => {
@@ -57,7 +57,7 @@ export const signup = (credentials) => {
 export const getCurrentUser = () => {
 	const token = localStorage.getItem("token")
 	return dispatch => {
-		return fetch(`http://localhost:3000/auto_login`, {
+		return fetch(`http://localhost:3000/api/v1/auto_login`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

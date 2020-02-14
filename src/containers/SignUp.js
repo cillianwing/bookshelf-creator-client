@@ -11,7 +11,7 @@ const SignUp = ({signUpFormData, updateSignUpForm, signup}) => {
 			...signUpFormData,
 			[name]: value
 		}
-		updateSingupForm(updatedFormInfo)
+		updateSignUpForm(updatedFormInfo)
 	}
 
 	const handleSubmit = (event) => {
@@ -23,10 +23,11 @@ const SignUp = ({signUpFormData, updateSignUpForm, signup}) => {
 		<form onSubmit={handleSubmit}>
 			<input type="text" placeholder="Email" name="email" value={signUpFormData.email} onChange={handleInputChange} />
 			<input type="password" placeholder="Password" name="password" value={signUpFormData.password} onChange={handleInputChange} />
+			<input type="password" placeholder="Confirm Password" name="password_confirmation" value={signUpFormData.password_confirmation} onChange={handleInputChange} />
 			<input type="text" placeholder="Name" name="name" value={signUpFormData.name} onChange={handleInputChange} />
 			<textarea placeholder="Biography" name="biography" value={signUpFormData.biography} onChange={handleInputChange} />
-			<input type="number" placeholder="Books Goal" name="booksGoal" value={signUpFormData.booksGoal} onChange={handleInputChange} />
-			<input type="number" placeholder="Pages Goal" name="pagesGoal" value={signUpFormData.pagesGoal} onChange={handleInputChange} />
+			<input type="number" placeholder="Books Goal" name="books_goal" value={signUpFormData.books_goal} onChange={handleInputChange} />
+			<input type="number" placeholder="Pages Goal" name="pages_goal" value={signUpFormData.pages_goal} onChange={handleInputChange} />
 			<input type="submit" value="Sign Up" />
 		</form>
 	)
@@ -34,7 +35,9 @@ const SignUp = ({signUpFormData, updateSignUpForm, signup}) => {
 }
 
 const mapStateToProps = state => {
-	signUpFormData: state.signUpForm
+	return {
+		signUpFormData: state.signUpForm
+	}
 }
 
-export default connect(mapStateToProps, {})(SignUp);
+export default connect(mapStateToProps, {updateSignUpForm, signup})(SignUp);

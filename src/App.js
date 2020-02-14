@@ -6,7 +6,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Main from './components/Main';
 import Home from './components/Home';
 import Login from './containers/Login';
-import Signup from './containers/SignUp';
+import SignUp from './containers/SignUp';
 
 function App(props) {
   const { loggedIn } = props
