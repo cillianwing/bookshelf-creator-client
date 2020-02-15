@@ -16,6 +16,9 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import IconButton from '@material-ui/core/IconButton';
+import HomeIcon from '@material-ui/icons/Home';
 
 function Copyright() {
   return (
@@ -123,14 +126,11 @@ const Main = (props) => {
             Bookshelf App
           </Typography>
           <nav>
-            <Link variant="button" color="textPrimary" href="/books" className={classes.link}>
-              My Books
+            <Link variant="button" underline="none" color="textPrimary" href="/" className={classes.link}>
+              Home<IconButton><HomeIcon /></IconButton>
             </Link>
-            <Link variant="button" color="textPrimary" href="/search" className={classes.link}>
-              Search Books
-            </Link>
-            <Link variant="button" color="textPrimary" href="/stats" className={classes.link}>
-              Reading Stats
+            <Link variant="button" underline="none" color="textPrimary" href="/profile" className={classes.link}>
+							Profile<IconButton><AccountBoxIcon /></IconButton>
             </Link>
           </nav>
           <Button href="#" onClick={handleLogout} color="primary" variant="outlined" className={classes.link}>
