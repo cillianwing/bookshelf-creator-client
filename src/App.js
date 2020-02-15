@@ -6,6 +6,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Main from './components/Main';
 import Home from './components/Home';
 import Login from './containers/Login';
+import Logout from './components/Logout';
 import SignUp from './containers/SignUp';
 import SearchBooksContainer from './containers/SearchBooksContainer';
 import BooksContainer from './containers/BooksContainer';
@@ -24,12 +25,13 @@ function App(props) {
     
     <div className="App">
       <Router>
-        { loggedIn ? <Main /> : <Home /> }
+        { loggedIn ? <Main /> : <Login /> }
         <Switch>
           <Route exact path='/signup'><SignUp /></Route>
           <Route exact path='/login'><Login /></Route>
           <Route exact path='/books'><BooksContainer /></Route>
           <Route exact path='/search'><SearchBooksContainer /></Route>
+          <Route exact path='/logout'><Logout /></Route>
         </Switch>
       </Router>
     </div>
