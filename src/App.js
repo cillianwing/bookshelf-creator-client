@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { getCurrentUser } from './actions/currentUser';
 import Main from './components/Main';
@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import SearchBooksContainer from './containers/SearchBooksContainer';
+import BooksContainer from './containers/BooksContainer';
 
 function App(props) {
   const { loggedIn } = props
@@ -20,16 +21,18 @@ function App(props) {
   }, [])
 
   return (
-    <Router>
-      <div className="App">
+    
+    <div className="App">
+      <Router>
         { loggedIn ? <Main /> : <Home /> }
         <Switch>
-          {/* all routes to be listed here <Route exact path='/'><Component /></Route> */}
           <Route exact path='/signup'><SignUp /></Route>
           <Route exact path='/login'><Login /></Route>
+          <Route exact path='/books'><BooksContainer /></Route>
+          <Route exact path='/search'><SearchBooksContainer /></Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
