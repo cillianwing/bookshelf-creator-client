@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { getCurrentUser } from './actions/currentUser';
 import Main from './components/Main';
-import Home from './components/Home';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import SearchBooksContainer from './containers/SearchBooksContainer';
