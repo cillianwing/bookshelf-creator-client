@@ -9,7 +9,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -141,7 +140,7 @@ const Main = (props) => {
       {/* Hero unit */}
       <Container maxWidth="md" component="main" className={classes.heroContent}>
         <Typography component="h2" variant="h3" align="center" color="textPrimary" gutterBottom>
-          Welcome back to your virtual bookshelf!
+          Welcome back to your virtual bookshelf, {props.currentUser.name}!
         </Typography>
         {/* <Typography variant="h5" align="center" color="textSecondary" component="p">
           
@@ -188,4 +187,10 @@ const Main = (props) => {
 	)
 }
 
-export default connect(null, { logout })(Main);
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, { logout })(Main);
