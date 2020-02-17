@@ -197,7 +197,7 @@ const SignUp = ({signUpFormData, updateSignUpForm, signup}) => {
           </Button>
           <Grid container justify="center">
             <Grid item>
-              <Link href="/login" variant="body2">
+              <Link href="/" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
