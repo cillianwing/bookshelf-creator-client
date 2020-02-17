@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
 import { logout } from '../actions/currentUser';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -83,6 +84,7 @@ const tiers = [
     description: ['View all your read/unread books', 'Check off completed books', 'Jot down that inspirational quote', 'Stay on top of your reading!'],
     buttonText: 'View my books now',
     buttonVariant: 'contained',
+    buttonRoute: '/books'
   },
   {
     title: 'Search Books',
@@ -94,6 +96,7 @@ const tiers = [
     ],
     buttonText: 'Search Books Now',
     buttonVariant: 'contained',
+    buttonRoute: '/search'
   },
   {
     title: 'Reading Stats',
@@ -105,6 +108,7 @@ const tiers = [
     ],
     buttonText: 'View My Reading Stats',
     buttonVariant: 'contained',
+    buttonRoute: '/stats'
   },
 ];
 
@@ -167,7 +171,7 @@ const Main = (props) => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                  <Button fullWidth variant={tier.buttonVariant} color="primary" component={RouterLink} to={tier.buttonRoute}>
                     {tier.buttonText}
                   </Button>
                 </CardActions>
