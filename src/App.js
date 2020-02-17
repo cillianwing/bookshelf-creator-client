@@ -23,12 +23,11 @@ function App(props) {
     
     <div className="App">
       <Router>
-        { loggedIn ? <Main /> : <Login /> }
         <Switch>
-          <Route exact path='/signup'><SignUp /></Route>
-          <Route exact path='/login'><Login /></Route>
-          <Route exact path='/books'><BooksContainer /></Route>
-          <Route exact path='/search'><SearchBooksContainer /></Route>
+          { loggedIn ? <Route exact path='/' component={Main} /> : <Route exact path='/' component={Login} /> }
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/books' component={BooksContainer} />
+          <Route exact path='/search' component={SearchBooksContainer} />
         </Switch>
       </Router>
     </div>
