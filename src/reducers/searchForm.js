@@ -1,7 +1,6 @@
 const initialState = {
-  title: "",
-  author: "",
-  isbn: ""
+  searchType: "",
+  searchTerms: "",
 }
 
 export default (state = initialState, action) => {
