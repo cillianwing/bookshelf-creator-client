@@ -1,3 +1,20 @@
+# Week 1 Project Goals
+
+- Backend setup finalized
+- User authentication (signup, login, logout) complete
+- Main landing page
+  - styling, links, etc.
+- SearchBooksContainer and associated components
+  - Form for book searches
+  - Container area to house all the cards for returned book searches
+  - Proper fetch calls to Google Books API
+  - User can successfully add a book to their bookshelf (and the db) via this search container
+
+# Remaining for Week 2
+
+- BooksContainer
+- ReadingStats component
+
 # SearchBooks Container Notes
 
 - Should the search fetch call to the Google Books API be handled within the container or the action/reducer components?
