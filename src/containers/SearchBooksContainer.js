@@ -50,7 +50,7 @@ const SearchBooksContainer = (props) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// search(searchFormData)
+		props.search(props.searchFormData)
 	}
 
   return (
@@ -92,17 +92,18 @@ const SearchBooksContainer = (props) => {
           </Button>
         </FormControl>
       </form>
+      <p>{ props.searchBooks ? props.searchBooks.searchedBooks.length : "No searched books." }</p>
     </Container>
+
   )
 
 }
 
 const mapStateToProps = (state) => {
   return {
-    searchedBooks: state.searchedBooks,
-    loading: state.loading,
+    searchBooks: state.searchBooks,
     searchFormData: state.searchForm
   }
 }
 
-export default connect(mapStateToProps, { updateSearchForm })(SearchBooksContainer);
+export default connect(mapStateToProps, { updateSearchForm, search })(SearchBooksContainer);

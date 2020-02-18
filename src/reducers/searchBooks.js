@@ -5,13 +5,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case 'LOAD_BOOKS':
+		case "LOAD_BOOKS":
 			return {
 				...state,
-				searchedBooks: [...state.searchedBooks],
 				loading: true
 			}
-		case 'ADD_SEARCHED_BOOKS':
+		case "ADD_SEARCHED_BOOKS":
 			return {
 				...state,
 				searchedBooks: action.searchedBooks,
